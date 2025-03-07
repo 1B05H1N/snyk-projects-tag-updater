@@ -26,8 +26,8 @@ HEADERS = {
 }
 
 # optional filters for projects (target_runtime and origins)
-FILTERED_PROJECT_TARGET_RUNTIME = "net6.0"  # set to empty string ("") if you do not want to filter by target runtime
-FILTERED_PROJECT_ORIGINS = "azure-repos"    # set to empty string ("") if you do not want to filter by origins
+FILTERED_PROJECT_TARGET_RUNTIME = ""  # set to empty string ("") if you do not want to filter by target runtime
+FILTERED_PROJECT_ORIGINS = ""    # set to empty string ("") if you do not want to filter by origins
 
 def send_request(method, url, headers=None, max_retries=3, **kwargs):
     """send an http request with rate limit handling"""
