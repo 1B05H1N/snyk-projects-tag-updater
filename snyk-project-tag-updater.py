@@ -36,7 +36,7 @@ def send_request(method, url, headers=None, max_retries=3, **kwargs):
     retries = 0
     while True:
         try:
-            response = requests.request(method, url, headers=headers, **kwargs)
+            response = requests.request(method, url, headers=headers, timeout=kwargs.pop("timeout", 60), **kwargs)
             if response.status_code == 429:
                 retry_after = int(response.headers.get("Retry-After", 60))
                 print(f"\nRate limit exceeded. Waiting {retry_after} seconds...\n")
